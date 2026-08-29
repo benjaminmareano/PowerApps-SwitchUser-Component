@@ -1,0 +1,12 @@
+Set(
+    varRealUser,
+    BuildUser(User().Email)
+);
+Set(
+    varCurrentUser,
+    varRealUser
+);
+Set(
+    varIsTester,
+    true
+);
