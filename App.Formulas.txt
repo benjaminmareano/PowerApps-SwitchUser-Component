@@ -1,0 +1,29 @@
+AppUser := Type({
+    Id:          Text,
+    DisplayName: Text,
+    Email:       Text,
+    UPN:         Text,
+    JobTitle:    Text,
+    Department:  Text,
+    Office:      Text,
+    Phone:       Text,
+    Initials:    Text,
+    Photo:       Text
+});
+
+BuildUser(userId: Text): AppUser =
+With(
+    { p: Office365Users.UserProfileV2(userId) },
+    {
+        Id:          p.id,
+        DisplayName: p.displayName,
+        Email:       Coalesce(p.mail, p.userPrincipalName),
+        UPN:         p.userPrincipalName,
+        JobTitle:    Coalesce(p.jobTitle, ""),
+        Department:  Coalesce(p.department, ""),
+        Office:      Coalesce(p.officeLocation, ""),
+        Phone:       Coalesce(p.mobilePhone, ""),
+        Initials:    Concat(FirstN(Split(Trim(p.displayName), " "), 2), Left(Value, 1)),
+        Photo:       IfError(Office365Users.UserPhotoV2(p.id), "")
+    }
+);
