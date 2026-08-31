@@ -13,6 +13,7 @@ Setup takes about ten minutes.
 | File | Purpose |
 |---|---|
 | `People_Picker.zip` | Unmanaged solution containing the `People Picker` component library |
+| `People_Picker.msapp` | The component library as a single file, for importing into a library you already maintain |
 | `SwitchUser.yaml` | The complete demo screen — chip, banner, picker dialog, and profile card |
 | `App.Formulas` | The `AppUser` type and the `BuildUser()` function |
 | `App.OnStart` | Variable initialization |
@@ -42,6 +43,20 @@ Follow the steps in order. The sequence matters.
 5. Wait for the import to finish.
 
 This installs the **People Picker** component library into your environment. One import serves every app in that environment.
+
+#### Alternative: add it to a library you already have
+
+If you already maintain a component library, skip the solution import and pull the component straight into it.
+
+1. Open your component library in Power Apps Studio.
+2. In the **Tree view**, select the **Components** tab.
+3. Select the **Import components** icon next to **New component**.
+4. On the **Canvas** tab, select **Upload file**.
+5. Choose `People_Picker.msapp`.
+6. Select **cmpPeoplePicker**, then select **Import**.
+7. Select **Save**, then **Publish**.
+
+In Step 6 below, select your own library instead of **People Picker**.
 
 ### 2. Enable user-defined types
 
