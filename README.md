@@ -4,6 +4,9 @@ A canvas component that lets you view your app as any other user in your directo
 
 A user reports a bug you can't reproduce. Your app decides what to show based on who's signed in — and that's always you. This routes identity through a variable instead, so you can switch to their account and see exactly what they see.
 
+LinkedIn Video:
+https://lnkd.in/p/eYkDD_TB
+
 Setup takes about ten minutes.
 
 ---
